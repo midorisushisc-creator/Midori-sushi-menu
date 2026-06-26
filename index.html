@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Midori Sushi | Menú Digital</title>
+  <style>
+    :root{
+      --bg:#07110b;
+      --panel:#0d1710;
+      --panel-2:#121e16;
+      --text:#f4f7f2;
+      --muted:#a7b3ab;
+      --line:rgba(255,255,255,.08);
+      --green:#7bd389;
+      --gold:#d8ad55;
+      --gold-2:#b98a2e;
+      --shadow: 0 18px 40px rgba(0,0,0,.35);
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:radial-gradient(circle at top right, rgba(216,173,85,.14), transparent 24%), var(--bg); color:var(--text); font-family: Arial, Helvetica, sans-serif;}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:18px 16px 120px}
+    .hero{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)); border:1px solid var(--line); border-radius:32px; padding:18px; box-shadow:var(--shadow)}
+    .top{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+    .logo{width:72px;height:72px;border-radius:18px;background:linear-gradient(145deg, #111, #050805); border:1px solid rgba(216,173,85,.25); display:grid;place-items:center;font-weight:800;color:#e7dfc4;letter-spacing:.5px}
+    .brand h1{margin:0;font-size:28px;letter-spacing:1px}
+    .brand p{margin:6px 0 0;color:var(--gold);font-weight:700;letter-spacing:1px}
+    .info{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+    .chip{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.03); border:1px solid var(--line); border-radius:999px;padding:10px 14px;color:var(--text)}
+    .searchbar{margin-top:18px;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:14px 16px;display:flex;align-items:center;gap:10px}
+    .searchbar input{flex:1;background:transparent;border:none;outline:none;color:var(--text);font-size:16px}
+    .tabs{display:flex;gap:10px;overflow:auto;padding:18px 0 4px}
+    .tab{white-space:nowrap;border:1px solid var(--line);background:var(--panel);padding:12px 16px;border-radius:999px;color:var(--muted);font-weight:700}
+    .tab.active{background:linear-gradient(180deg, var(--gold), var(--gold-2)); color:#111; border-color:transparent}
+    .section{margin-top:24px}
+    .section h2{margin:0 0 8px;font-size:24px}
+    .section p{margin:0;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid var(--line); border-radius:28px; overflow:hidden; box-shadow:var(--shadow)}
+    .photo{height:180px;background:linear-gradient(135deg, rgba(123,211,137,.18), rgba(216,173,85,.18)), linear-gradient(180deg, #1b291f, #0b130e); display:flex;align-items:center;justify-content:center;font-size:54px}
+    .content{padding:16px}
+    .row{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+    .title{font-size:20px;font-weight:800;margin:0}
+    .price{font-size:20px;font-weight:900;color:var(--gold);white-space:nowrap}
+    .desc{margin:10px 0 14px;color:var(--muted);line-height:1.5}
+    .actions{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{border:none;border-radius:14px;padding:12px 14px;font-weight:800;cursor:pointer}
+    .btn.secondary{background:rgba(255,255,255,.05);color:var(--text);border:1px solid var(--line)}
+    .btn.primary{background:linear-gradient(180deg, var(--gold), var(--gold-2));color:#111}
+    .cartbar{position:fixed;left:16px;right:16px;bottom:16px;background:linear-gradient(180deg, rgba(216,173,85,.98), rgba(185,138,46,.98)); color:#111;border-radius:24px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center; box-shadow:var(--shadow); gap:12px}
+    .cartbar strong{font-size:18px}
+    .small{font-size:13px;opacity:.9}
+    @media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media (max-width:640px){.grid{grid-template-columns:1fr}.brand h1{font-size:24px}.photo{height:160px}.cartbar{flex-direction:column;align-items:stretch}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div class="top">
+        <div class="logo">MS</div>
+        <div class="brand">
+          <h1>Midori Sushi</h1>
+          <p>Japanese premium experience</p>
+        </div>
+      </div>
+
+      <div class="info">
+        <div class="chip">📞 +591 77223267</div>
+        <div class="chip">📍 Tu ubicación aquí</div>
+        <div class="chip">🕒 Abierto hoy</div>
+      </div>
+
+      <div class="searchbar">
+        <span>🔎</span>
+        <input type="search" placeholder="Buscar producto..." />
+      </div>
+
+      <div class="tabs">
+        <div class="tab active">Promociones</div>
+        <div class="tab">Combos</div>
+        <div class="tab">Rolls Clásicos</div>
+        <div class="tab">Rolls VIP</div>
+        <div class="tab">Temakis</div>
+        <div class="tab">Sashimi</div>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>Promociones</h2>
+      <p>Ofertas activas por tiempo limitado.</p>
+
+      <div class="grid">
+        <article class="card">
+          <div class="photo">🍣</div>
+          <div class="content">
+            <div class="row">
+              <h3 class="title">Combo House 1 Samurai</h3>
+              <div class="price">198 Bs</div>
+            </div>
+            <div class="desc">30 piezas con una selección especial para compartir.</div>
+            <div class="actions">
+              <button class="btn secondary">Ver detalle</button>
+              <button class="btn primary">Agregar</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="photo">🐟</div>
+          <div class="content">
+            <div class="row">
+              <h3 class="title">Combo La Paz Selection</h3>
+              <div class="price">189 Bs</div>
+            </div>
+            <div class="desc">Salmón fresco, california XL y nigiris seleccionados.</div>
+            <div class="actions">
+              <button class="btn secondary">Ver detalle</button>
+              <button class="btn primary">Agregar</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="photo">✨</div>
+          <div class="content">
+            <div class="row">
+              <h3 class="title">Combo Ejecutivo</h3>
+              <div class="price">-- Bs</div>
+            </div>
+            <div class="desc">Ideal para almuerzo rápido con la calidad de siempre.</div>
+            <div class="actions">
+              <button class="btn secondary">Ver detalle</button>
+              <button class="btn primary">Agregar</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <div class="cartbar">
+    <div>
+      <strong>Carrito</strong><br />
+      <span class="small">0 productos seleccionados</span>
+    </div>
+    <div>
+      <strong>Total: 0 Bs</strong><br />
+      <span class="small">Enviar pedido por WhatsApp</span>
+    </div>
+  </div>
+</body>
+</html>
